@@ -8,21 +8,16 @@ router.post('/3COP-NOH', function (req, res) {
   const varoption = req.session.data.availableforms
 
   // Check which option the user has selected on the 'submitting' page
-  if (varoption === 'cop-noh') 
-  {
+  if (varoption === 'cop-noh') {
     // Send user to COP-NOH page
-    res.redirect('/3COP-NOH')
-  } 
+    res.redirect('/3COP-NOH') } 
   else {
-      if (varoption === 'cop-co')
-      {
-      // send user to COP-NOHCO page
-      res.redirect('/4COP-NOHCO')
-      }
-      else {
-      // Send user to supp-docs page
-      res.redirect('/5supp-docs')
-    }
+    if (varoption === 'cop-co') {
+    // send user to COP-NOHCO page
+    res.redirect('/4COP-NOHCO')}
+    else {
+    // Send user to supp-docs page
+    res.redirect('/5supp-docs')}
   }
 })
 

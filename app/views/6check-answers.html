@@ -13,35 +13,21 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
       <h1 class="govuk-heading-xl">Check your answers before sending your application</h1>
-
+      <h2 class="govuk-heading-s">Court of Protection</h2>
       <h2 class="govuk-heading-m">Basic Information</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Last Name
+            Name
           </dt>
           <dd class="govuk-summary-list__value">
-            Sarah Philips
+            {{data['firstname'] }} {{data['lastname'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="#">
+            <a href="2basicinfo">
               Change
               <span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            First Name
-          </dt>
-          <dd class="govuk-summary-list__value">
-            5 January 1978
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> date of birth</span>
             </a>
           </dd>
         </div>
@@ -50,14 +36,12 @@
             Case reference
           </dt>
           <dd class="govuk-summary-list__value">
-            72 Guild Street
-            <br>London
-            <br>SE23 6FH
+            {{data['caseref'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="#">
+            <a href="2basicinfo">
               Change
-              <span class="govuk-visually-hidden"> contact information</span>
+              <span class="govuk-visually-hidden"> case reference</span>
             </a>
           </dd>
         </div>
@@ -66,13 +50,12 @@
             Email
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>07700 900457</p>
-            <p>sarah.phillips@example.com</p>
+            {{data['email'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="#">
+            <a href="2basicinfo">
               Change
-              <span class="govuk-visually-hidden"> contact details</span>
+              <span class="govuk-visually-hidden"> email address</span>
             </a>
           </dd>
         </div>
@@ -83,15 +66,15 @@
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Name
+            Name of person to be notified
           </dt>
           <dd class="govuk-summary-list__value">
-            502135326
+            {{data['cop-nohname'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="#">
+            <a href="3COP-NOH">
               Change
-              <span class="govuk-visually-hidden"> previous application number</span>
+              <span class="govuk-visually-hidden"> prerson to be notified</span>
             </a>
           </dd>
         </div>
@@ -100,27 +83,29 @@
             Address
           </dt>
           <dd class="govuk-summary-list__value">
-            For personal use
+            {{data['cop-nohaddress'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="#">
+            <a href="3COP-NOH">
               Change
-              <span class="govuk-visually-hidden"> licence type</span>
+              <span class="govuk-visually-hidden"> address</span>
             </a>
           </dd>
         </div>
+
+        <br><br>
         <h2 class="govuk-heading-m">Details of the case</h2>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Case Number
+            Case Reference
           </dt>
           <dd class="govuk-summary-list__value">
-            72 Guild Street
+            {{data['cop-nohcaseref'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="#">
+            <a href="3COP-NOH">
               Change
-              <span class="govuk-visually-hidden"> home address</span>
+              <span class="govuk-visually-hidden"> case number</span>
             </a>
           </dd>
         </div>
@@ -129,12 +114,12 @@
             Applicant
           </dt>
           <dd class="govuk-summary-list__value">
-            Valid for 6 months
+            {{data['cop-nohapplicant'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="#">
+            <a href="3COP-NOH">
               Change
-              <span class="govuk-visually-hidden"> licence period</span>
+              <span class="govuk-visually-hidden"> applicant</span>
             </a>
           </dd>
         </div>
@@ -143,28 +128,28 @@
             Person to whom the applicant relates
           </dt>
           <dd class="govuk-summary-list__value">
-            Valid for 6 months
+            {{data['cop-nohperson'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="#">
+            <a href="3COP-NOH">
               Change
-              <span class="govuk-visually-hidden"> licence period</span>
+              <span class="govuk-visually-hidden"> person application relates to</span>
             </a>
           </dd>
         </div>
-      </dl>
+      <br><br>  
       <h2 class="govuk-heading-m">Details of the hearing</h2>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Date
         </dt>
         <dd class="govuk-summary-list__value">
-          72 Guild Street
+          {{data['cop-nohdate'] }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="#">
+          <a href="3COP-NOH">
             Change
-            <span class="govuk-visually-hidden"> home address</span>
+            <span class="govuk-visually-hidden"> hearing date</span>
           </a>
         </dd>
       </div>
@@ -173,12 +158,12 @@
           Time
         </dt>
         <dd class="govuk-summary-list__value">
-          Valid for 6 months
+          {{data['cop-nohtime'] }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="#">
+          <a href="3COP-NOH">
             Change
-            <span class="govuk-visually-hidden"> licence period</span>
+            <span class="govuk-visually-hidden"> hearing timed</span>
           </a>
         </dd>
       </div>
@@ -187,12 +172,12 @@
           Location
         </dt>
         <dd class="govuk-summary-list__value">
-          Valid for 6 months
+          {{data['cop-nohlocation'] }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="#">
+          <a href="3COP-NOH">
             Change
-            <span class="govuk-visually-hidden"> licence period</span>
+            <span class="govuk-visually-hidden"> location</span>
           </a>
         </dd>
       </div>
@@ -201,12 +186,12 @@
           Hearing Type
         </dt>
         <dd class="govuk-summary-list__value">
-          Valid for 6 months
+          {{data['cop-nohhearingtype'] }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="#">
+          <a href="3COP-NOH">
             Change
-            <span class="govuk-visually-hidden"> licence period</span>
+            <span class="govuk-visually-hidden"> hearing type</span>
           </a>
         </dd>
       </div>
@@ -215,17 +200,17 @@
           Other Hearing Type
         </dt>
         <dd class="govuk-summary-list__value">
-          Valid for 6 months
+          {{data['cop-nohhearingother'] }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="#">
+          <a href="3COP-NOH">
             Change
-            <span class="govuk-visually-hidden"> licence period</span>
+            <span class="govuk-visually-hidden"> other hearing type</span>
           </a>
         </dd>
       </div>
     </dl>
-
+    <br><br>
       <h2 class="govuk-heading-m">Now send your application</h2>
 
       <p>By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>

@@ -52,12 +52,12 @@
 
         {{ govukInput({
           label: {
-            text: "Case Number",
+            text: "Case Reference",
             classes: "govuk-label--m",
             isPageHeading: true
           },
-          id: "cop-nohcaseno",
-          name: "cop=nohcaseno"
+          id: "cop-nohcaseref",
+          name: "cop-nohcaseref"
         }) }}
 
         
@@ -70,7 +70,7 @@
             isPageHeading: true
           },
           id: "cop-nohapplicant",
-          name: "copnohapplicant"
+          name: "cop-nohapplicant"
         }) }}
 
         {{ govukTextarea({
@@ -128,9 +128,47 @@
           }
         }) }}
 
+
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+        
+          <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">      
+        
+              {{ govukRadios({
+                idPrefix: "interview-needs",
+                name: "interview-needs",
+                fieldset: {
+                  legend: {
+                    text: "Hearing Type",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                items: [
+                  {
+                    value: "directions",
+                    text: "directions"
+                  },
+                  {
+                    value: "disposing",
+                    text: "disposing of the matter"
+                  },
+                  {
+                    value: "other",
+                    text: "other"
+                  }
+                ]
+              }) }}
+      
+          </div>
+        </div>
+
+        <h1 class="govuk-heading-s">If 'other' - Use the box below to provide information about what the hearing is for.</h1>
         {{ govukTextarea({
-          name: "cop-nohhearingabout",
-          id: "cop-nohhearingabout",
+          name: "cop-nohhearingother",
+          id: "cop-nohhearingother",
           label: {
             text: "",
             classes: "govuk-label--m",

@@ -1,0 +1,155 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Court of Protection - Notice of Hearing - Committal order
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-s">Court of Protection</h1>
+      <h1 class="govuk-heading-xl">Notice of Hearing for committal order</h1>
+
+      <form class="form" action="6check-answers" method="post">
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          label: {
+            text: "To",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Enter the name of person to be notified"
+          },
+          id: "cop-nohname",
+          name: "cop-nohname"
+        }) }}
+
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+        {{ govukTextarea({
+          name: "cop-nohaddress",
+          id: "cop-nohaddress",
+          label: {
+            text: "Address",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Enter the address of person to be notified."
+          }
+        }) }}
+
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          label: {
+            text: "Case Reference",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          id: "cop-nohcaseref",
+          name: "cop-nohcaseref"
+        }) }}
+
+        
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          label: {
+            text: "Applicant",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          id: "cop-nohapplicant",
+          name: "cop-nohapplicant"
+        }) }}
+
+        {{ govukTextarea({
+          name: "cop-nohperson",
+          id: "cop-nohperson",
+          label: {
+            text: "Person to whom the application relates",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: ""
+          }
+        }) }}
+
+        <h1 class="govuk-heading-l">Details of Hearing</h1>
+
+        {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+          {{ govukDateInput({
+            id: "cop-nohdate",
+            namePrefix: "cop-nohdate",
+            fieldset: {
+              legend: {
+                text: "Date of hearing",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "For example, 27 3 2021"
+            }
+        }) }} 
+       
+        {{ govukInput({
+          label: {
+            text: "Time of hearing",
+            classes: "govuk-label-m",
+            isPageHeading: true
+          },
+          id: "cop-nohtime",
+          name: "cop-nohtime"
+        }) }}
+
+        {{ govukTextarea({
+          name: "cop-nohlocation",
+          id: "cop-nohlocation",
+          label: {
+            text: "Location",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: ""
+          }
+        }) }}
+
+    <p>
+      The court has the power to take out an order to send you to prison, fine you, or seize your assets if it finds that any of the allegations made against you are true and amount to a contempt of court.
+    </p>
+    <p>
+    You must attend court on the date shown on this form. It is in your own interest to do so. You should bring with you any witnesses and documents which you think will help you put your side of the case.
+    </p>
+    <p>
+    If you consider the allegations are not true you must tell the court why. If it is established that they are true, you must tell the court of any good reason why they do not amount to a contempt of court, or, if they do, why you should not be punished. Your attention is drawn to Part 21 of the Court of Protection Rules 2017 (the Rules) and Practice Direction 21A supplementing the Rules.
+    </p>
+
+        <p>
+          If you have any questions or need further information please check the website, www.justice.gov.uk or www.direct.gov.uk or contact Court Enquiry Service on 0300 456 4600.
+        </p>
+        <p>
+          If you are attending the hearing and you need any special assistance or facilities please contact Court Enquiry Service on the above number immediately so that arrangements can be made (if you have not done so already).  
+        </p>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
